@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/styles.sass';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ReduxThunk from 'redux-thunk';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import userReducer from './store/reducers/user';
+
+import Splash from './screens/Splash';
+import Home from './screens/Home';
+import Player from './screens/Player';
+
+const rootReducer = combineReducers({
+	user: userReducer,
+});
+
+const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
+
+const App = () => {
+	return (
+		<Provider store={store}>
+			<Router>
+				<div className='App'>
+					<Switch>
+						<Route exact path='/' component={Splash} />
+						<Route exact path='/home' component={Home} />
+						<Route exact path='/watch/:id' component={Player} />
+					</Switch>
+				</div>
+			</Router>
+		</Provider>
+	);
+};
 
 export default App;
