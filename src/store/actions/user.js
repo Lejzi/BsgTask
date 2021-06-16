@@ -15,8 +15,6 @@ export const auth = () => {
 		);
 		const res = await response.json();
 
-		console.log('auth res: ', res);
-
 		dispatch({ type: 'AUTH', res });
 	};
 };

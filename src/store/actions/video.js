@@ -21,7 +21,6 @@ export const loadList = (listId, type) => {
 		);
 		const res = await response.json();
 
-		console.log('video res: ', res);
 		dispatch({ type, res });
 	};
 };

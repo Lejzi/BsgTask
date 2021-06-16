@@ -26,8 +26,6 @@ const Player = (props) => {
 				}
 			);
 			const res = await response.json();
-
-			console.log('load video res: ', res);
 			setVideo(res);
 		};
 		if (video === null) {
