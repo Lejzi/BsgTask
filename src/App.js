@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ReduxThunk from 'redux-thunk';
 
 import userReducer from './store/reducers/user';
+import videoReducer from './store/reducers/video';
 
 import Splash from './screens/Splash';
 import Home from './screens/Home';
@@ -12,6 +13,7 @@ import Player from './screens/Player';
 
 const rootReducer = combineReducers({
 	user: userReducer,
+	video: videoReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(ReduxThunk));

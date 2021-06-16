@@ -1,6 +1,8 @@
 body
   background-color: #141414
   color: #fafafa
+  a 
+    text-decoration: none
 
 .App-header 
   display: flex
@@ -13,3 +15,59 @@ body
 .App-logo
   height: auto
   width: 40vw
+
+.hero 
+  height: 80vh
+  background-image: url('https://images.indianexpress.com/2021/05/Lucifer-5B-poster-1200.jpg')
+  background-size: cover
+  background-position: bottom center
+  display: flex
+  flex-direction: column-reverse
+
+.Home 
+  padding-bottom: 50px
+  .hello 
+    margin: 30px
+    font-size: 50px
+    font-weight: 900
+  .text-big
+    margin-left: 30px
+    font-size: 26px
+    font-weight: 600
+  .scroll
+    display: flex
+    flex-grow: 1
+    padding: 0 15px
+    overflow-x: scroll
+  div.card
+    display: flex 
+    width: 350px
+    height: 200px
+    overflow: hidden
+    flex-shrink: 0
+    background-size: cover
+    margin: 0 15px
+    border-radius: 20px
+    .gradient 
+      padding: 15px
+      background: linear-gradient(180deg, #11111100, #1111117e)
+      display: flex
+      flex: 1
+      flex-direction: column-reverse
+    .text 
+      font-size: 24px
+      font-weight: 600
+      color: #fafafa
+      text-decoration: none
+   
+
+
+// .log-out 
+//   background-color: #22e032
+//   color: #fafafa
+//   font-weight: bold
+//   padding: 5px 20px
+//   border-radius: 5px
+//   border: none
+//   &:hover
+//     cursor: pointer

@@ -15,6 +15,14 @@ export const auth = () => {
 		);
 		const res = await response.json();
 
+		console.log('auth res: ', res);
+
 		dispatch({ type: 'AUTH', res });
+	};
+};
+
+export const logout = () => {
+	return async (dispatch) => {
+		dispatch({ type: 'LOGOUT' });
 	};
 };

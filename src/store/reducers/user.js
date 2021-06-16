@@ -10,9 +10,11 @@ const userReducer = (state = initialState, action) => {
 			return {
 				...state,
 				uid: action.res.User.Id,
-				token: action.res.AuthorizationToken.token,
+				token: action.res.AuthorizationToken.Token,
 				name: action.res.User.UserName,
 			};
+		case 'LOGOUT':
+			return initialState;
 		default:
 			return state;
 	}
